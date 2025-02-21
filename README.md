@@ -5,48 +5,24 @@ Below we will see that this can be generalized to cube, 4-th and 5-th roots with
 
 ## Approximation of square roots
 
-Let $a$ be an integer $\geq 2$, we suppose that a is not a perfect square, to construct a sequence converging to $\sqrt{a}$, we start by finding $\left\lfloor \sqrt{a} \right\rfloor$ i.e. the integer square root of a, we denote it by r (there are several ways to find the integer square root of a number, one can use Heron's method for example). Since $\lvert\sqrt{a} - r\rvert \lt 1$, the sequence $(\sqrt{a}-r)^m$ converges to 0 as $m \to \infty$, also $(\sqrt{a}-r)^m = u_m - v_m\sqrt{a}$ where $(u_m)$ and $(v_m)$ are integer sequences (can be seen by using the binomial theorem and noticing that $\sqrt{a}^(2k) = a^k$ and $\sqrt{a}^(2k+1) = a^k\sqrt{a}$), it follows that the sequence $(u_m/v_m)$ converges to $\sqrt{a}$ as $m \to \infty$. The convergence can be sped up by taking the square of the previous iteration result, which is the same as using the sequence $(\sqrt{a}-d)^(2^n)$.  
+Let $a$ be an integer $\geq 2$, we suppose that a is not a perfect square, to construct a sequence converging to $\sqrt{a}$, we start by finding $\left\lfloor \sqrt{a} \right\rfloor$ i.e. the integer square root of a, we denote it by r (there are several ways to find the integer square root of a number, one can use Heron's method for example). Since $\lvert\sqrt{a} - r\rvert \lt 1$, the sequence $(\sqrt{a}-r)^m$ converges to 0 as $m \to \infty$, also $(\sqrt{a}-r)^m = u_m - v_m\sqrt{a}$ where $(u_m)$ and $(v_m)$ are integer sequences (can be seen by using the binomial theorem and noticing that $\sqrt{a}^{2k} = a^{k}$ and $\sqrt{a}^{2k+1} = a^{k}\sqrt{a}$), it follows that the sequence $(u_m/v_m)$ converges to $\sqrt{a}$ as $m \to \infty$. The convergence can be sped up by taking the square of the previous iteration result, which is the same as using the sequence $(\sqrt{a}-d)^{2^{n}}$.  
   
 Here are a few examples:
 
 |a|n|$(\sqrt{a}-1)^n$| approximant | precision |
 |-|-|----------------|-------------|-----------|
-|2|2|$3-2\sqrt{2}$| $3/2$ | $8.57864*10^-2$ |
-
-(sqrt(2)-1)^2 = 3-2sqrt(2) | 3/2 | 8.57864...×10^-2
-(sqrt(2)-1)^3 = -7+5sqrt(2) | 7/5 | 1.42136...×10^-2
-(sqrt(2)-1)^4 = 17-12sqrt(2) | 17/12 | 2.45310...×10^-3
-(sqrt(2)-1)^5 = -41+29sqrt(2) | 41/29 | 4.20459...×10^-4
-(sqrt(2)-1)^6 = 99-70sqrt(2) | 99/70 | 7.21519...×10^-5
-(sqrt(2)-1)^7 = -239+169sqrt(2) | 239/169 | 1.23789...×10^-5
-(sqrt(2)-1)^8 = 577-408sqrt(2) | 577/408 | 2.12390...×10^-6
-(sqrt(2)-1)^9 = - 1393 + 985 sqrt(2)  | 1393/985 | 3.64404...×10^-7
-(sqrt(2)-1)^10 = 3363 - 2378 sqrt(2) | 3363/2378 | 6.25218...×10^-8
-(sqrt(2)-1)^16 = 665857 - 470832 sqrt(2) | 665857/470832 | 1.59486...×10^-12
-(sqrt(2)-1)^32 = 886731088897 - 627013566048 sqrt(2) | 886731088897/627013566048 | 8.99293...×10^-25
-
-
-
-Soit a un entier >= 2, pour construire une suite qui converge vers sqrt(a), on commence par determiner floor(sqrt(a)) [par les algorithmes usuels.] <- @todo: à préciser
-Comme |sqrt(a)-d| < 1, la suite (sqrt(a)-d)^n tend vers 0 lorsque n tend vers l'infini, or (sqrt(a)-d)^n = u_n - v_n*sqrt(a) (par la formule du binôme de Newton)
-il s'en suit que le rapport u_n/v_n tend vers sqrt(a). La convergence peut être accelérée si à chaque itération on prends le carré de l'expression resultant de l'itération précédente,
-cela revient à considérer la suite (sqrt(a) - d)^(2^n).
-Voici quelques exemples:
-(sqrt(2)-1)^2 = 3-2sqrt(2) | 3/2 | 8.57864...×10^-2
-(sqrt(2)-1)^3 = -7+5sqrt(2) | 7/5 | 1.42136...×10^-2
-(sqrt(2)-1)^4 = 17-12sqrt(2) | 17/12 | 2.45310...×10^-3
-(sqrt(2)-1)^5 = -41+29sqrt(2) | 41/29 | 4.20459...×10^-4
-(sqrt(2)-1)^6 = 99-70sqrt(2) | 99/70 | 7.21519...×10^-5
-(sqrt(2)-1)^7 = -239+169sqrt(2) | 239/169 | 1.23789...×10^-5
-(sqrt(2)-1)^8 = 577-408sqrt(2) | 577/408 | 2.12390...×10^-6
-(sqrt(2)-1)^9 = - 1393 + 985 sqrt(2)  | 1393/985 | 3.64404...×10^-7
-(sqrt(2)-1)^10 = 3363 - 2378 sqrt(2) | 3363/2378 | 6.25218...×10^-8
-(sqrt(2)-1)^16 = 665857 - 470832 sqrt(2) | 665857/470832 | 1.59486...×10^-12
-(sqrt(2)-1)^32 = 886731088897 - 627013566048 sqrt(2) | 886731088897/627013566048 | 8.99293...×10^-25
-
-Cette suite est connue, les numérateurs sont les nombres de Pell-Lucas (suite A001333 de l'OEIS) et les dénominateurs sont les nombres de Pell (suite A000129 de l'OEIS).
-
-(sqrt(3)-1)^2 = 4 - 2 sqrt(3) | 2 | 2.67949...×10^-1
+|2|2|$3-2\sqrt{2}$| $3/2$ | $8.57864\cdot10^{-2}$|
+|2|3|$-7+5\sqrt{2}$| $7/5$ | $1.42136\cdot10^{-2}$|
+|2|4|$17-12\sqrt{2}$ | $17/12$ | $2.45310\cdot10^{-3}$|
+|2|5|$41+29\sqrt{2}$ | $41/29$ | $4.20459\cdot10^{-4}$|
+|2|6|$99-70\sqrt{2}$ | $99/70$ | $7.21519\cdot10^{-5}$|
+|2|7|$-239+169\sqrt{2}$ | $239/169$ | $1.23789\cdot10^{-5}$|
+|2|8|$577-408\sqrt{2}$ | $577/408$ | $2.12390\cdot10^{-6}$|
+|2|9|$-1393+985\sqrt{2}$ | $1393/985$ | $3.64404\cdot10^{-7}$|
+|2|10|$3363-2378\sqrt{2}$ | $3363/2378$ | $6.25218\cdot10^{-8}$|
+|2|16|$665857 - 470832\sqrt{2}$ | $665857/470832$ | $1.59486\cdot10^{-12}$|
+|2|32|$886731088897 - 627013566048\sqrt{2}$ | $886731088897/627013566048$ | $8.99293\cdot10^{-25}$|
+|3|2|$4 - 2\sqrt{3}$ | $2$ | $2.67949\cdot10^{-1}$|
 (sqrt(3)-1)^3 = -10 + 6 sqrt(3) | 5/3 | 6.53841...×10^-2
 (sqrt(3)-1)^4 = 28 - 16 sqrt(3) | 7/4 | 1.79492...×10^-2
 (sqrt(3)-1)^5 = -76 + 44 sqrt(3) | 19/11 | 4.77808...×10^-3
