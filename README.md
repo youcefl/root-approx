@@ -23,19 +23,31 @@ Here are a few examples:
 |2|16|$665857 - 470832\sqrt{2}$ | $665857/470832$ | $1.59486\cdot10^{-12}$|
 |2|32|$886731088897 - 627013566048\sqrt{2}$ | $886731088897/627013566048$ | $8.99293\cdot10^{-25}$|
 |3|2|$4 - 2\sqrt{3}$ | $2$ | $2.67949\cdot10^{-1}$|
-(sqrt(3)-1)^3 = -10 + 6 sqrt(3) | 5/3 | 6.53841...×10^-2
-(sqrt(3)-1)^4 = 28 - 16 sqrt(3) | 7/4 | 1.79492...×10^-2
-(sqrt(3)-1)^5 = -76 + 44 sqrt(3) | 19/11 | 4.77808...×10^-3
-(sqrt(3)-1)^6 = 208 - 120 sqrt(3) | 26/15 | 1.28253...×10^-3
-(sqrt(3)-1)^7 = -568 + 328 sqrt(3)  | 71/41 | 3.43490...×10^-4
-(sqrt(3)-1)^8 = 1552 - 896 sqrt(3) | 97/56 | 9.20496...×10^-5
-(sqrt(3)-1)^9 = -4240 + 2448 sqrt(3) | 265/153 | 2.46638...×10^-5
-(sqrt(3)-1)^10 = 11584 - 6688 sqrt(3) | 362/209 | 6.60870...×10^-6
-(sqrt(3)-1)^16 = 4817152 - 2781184 sqrt(3) | 18817/10864 | 2.44585...×10^-9
-(sqrt(3)-1)^32 = 46409906716672 - 26794772135936 sqrt(3) | 708158977/408855776 | 1.72691...×10^-18
+|3|3|$-10 + 6\sqrt{3}$ | $5/3$ | $6.53841\cdot10^{-2}$|
+|3|4|$28 - 16\sqrt{3}$ | $7/4$ | $1.79492\cdot10^{-2}$|
+|3|5|$-76 + 44\sqrt{3}$ | $19/11$ | $4.77808\cdot10^{-3}$|
+|3|6|$208 - 120\sqrt{3}$ | $26/15$ | $1.28253\cdot10^{-3}$|
+|3|7|$-568 + 328\sqrt{3}$  | $71/41$ | $3.43490\cdot10^{-4}$|
+|3|8|$1552 - 896\sqrt{3}$ | $97/56$ | $9.20496\cdot10^{-5}$|
+|3|9|$-4240 + 2448\sqrt{3}$ | $265/153$ | $2.46638\cdot10^{-5}$|
+|3|10|$11584 - 6688\sqrt{3}$ | $362/209$ | $6.60870\cdot10^{-6}$|
+|3|16|$4817152 - 2781184\sqrt{3}$ | $18817/10864$ | $2.44585\cdot10^{-9}$|
+|3|32|$46409906716672 - 26794772135936\sqrt{3}$ | $708158977/408855776$ | $1.72691\cdot10^{-18}$|
 
-Cette suite est également connue, les numérateurs constituent la suite A002531 de l'OEIS et les dénominateurs la suite A002530.
+Note that the sequence of numerators for the approximation of $\sqrt{3}$ is [A002531](https://oeis.org/A002531) and the sequence of denominators is [A002530](https://oeis.org/A002530).
+
+## Approximation of $\sqrt[3]{2}$
+
+If we try to apply the same method for approximating $\sqrt[3]{2} = 2^{\frac{1}{3}}$, we have $(\sqrt[3]{2}-1)^{2} = 1+2^{2/3}-2\cdot2^{1/3}$ from which we can not derive an approximation as we did in the case of square roots because in addition to $2^{1/3}$ there is the term $2^{2/3}$. However if we look at the expression $1+2^{2/3}-2\cdot2^{1/3}$ as being the evaluation at $X=2^{1/3}$ of the polynomial $P(X) = X^{2}-2X+1$, then if $P$ has real roots one of them has to be close to $2^{1/3}$. In this case P has $1$ as unique real root (with multiplicity 2), so the approximation we get is $2^{1/3} \approx 1$, which is not really interesting. Let us see what we get if we move to exponent 3: $(2^{1/3}-1)^{3} = (1+2^{2/3}-2\cdot2^{1/3})(2^{1/3}-1) = 1 + 3\cdot2^{1/3} - 3\cdot2^{2/3}$ which is the value of $P(X) = -3X^{2}+3X+1$ when $X=\sqrt[3]{2}$, now $P$ has the roots $(3 \pm \sqrt{21})/6$, we get the approximant $(3 + \sqrt{21})/6$, with precision $3.84E-3$. This approximant of $\sqrt[3]{2}$ contains a square root on which we can apply the method described in the previous section: we have $(\sqrt{21}-5)^{2} = 46-10\sqrt{21}$ hence $\sqrt{21} \approx 23/5$ from which we deduce the approximant $(3+23/5)/6 = 19/15$ of $\sqrt[3]{2}$ which has precision $6.7456E-3$.
+With exponent 4: $(2^{1/3}-1)^{4} = (1 + 3\cdot2^{1/3} - 3\cdot2^{2/3})(2^{1/3}-1) = -7 - 2\cdot2^{1/3} + 6\cdot2^{2/3}$, the polynomial is now $P(X) = 6X^{2}-2X-7$, the roots of P are $1/6 \pm \sqrt{43}/6$. The positive root yields  
+$$2^{\frac{1}{3}} \approx \frac{1 + \sqrt{43}}{6}$$ (precision: $3.47963e-4$)  
+By approximating $\sqrt{43}$ we get   
+\[
+$\sqrt[3]{2} \approx 91/72$ (precision: 3.96784e-3)
+\]
+$\sqrt[3]{2} \approx 1141/906$ (precision: 5.39151e-4)  
+$\sqrt[3]{2} \approx 14329/11376$ (precision: 3.39475e-4)  
 
 
- This work is licensed under CC BY 4.0.
+This work is licensed under CC BY 4.0.
  
