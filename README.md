@@ -128,7 +128,7 @@ The appendices contains a table which reproduces these results and extends them.
 |      |                  | $515/357$ ($\sqrt{57} \approx 385/51$)            | 3.27461e-4
 |      |                  | $3747/2597$ ($\sqrt{57} \approx 2801/371$)        | 5.69067e-4
 | 6    | $-3X^{2}+39X-50$ | $(13 - \sqrt{307/3})/2$                           | 2.46539e-4
-|      |                  | $3/2$ (\sqrt{307/3} \approx 10$)                  | 5.77504e-2
+|      |                  | $3/2$ ($\sqrt{307/3} \approx 10$)                  | 5.77504e-2
 |      |                  | $173/120$ ($\sqrt{307/3} \approx 607/60$)         | 5.82904e-4
 |      |                  | $3481/2414$ ($\sqrt{307/3} \approx 12210/1207$)   | 2.44599e-4
 |      |                  | $210071/145680$ ($\sqrt{307/3} \approx 736849/72840$) | 2.46550e-4
