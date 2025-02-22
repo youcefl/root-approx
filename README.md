@@ -73,15 +73,22 @@ where each approximation is followed by its precision between parenthesis. Below
 ## Approximation of n-th roots ($2 \leq n \leq 5$)
 
 ### General principle
-The method described for the approximation of $\sqrt[3]{2}$ in the previous section can be generalized as follows. Let a be a positive integer such that there exists no integer b such that $b^{n} = a$, we wish to approximate $\sqrt[n]{a}$. Suppose we have computed the integer n-th root of a, i.e. $\lfloor \sqrt[n]{a} \rfloor$, we call it d. The minimal polynomial of $\sqrt[n]{a}$ over $\mathbb{Q}$ is $X^{n} - a$, hence the algebraic extension $\mathbb{Q}(\sqrt[n]{a})$ of $\mathbb{Q}$ is of degree n, it is a $\mathbb{Q}$-vector space of dimension n, of which a basis is $(1, \sqrt[n]{a}, (\sqrt[n]{a})^2, \dots, (\sqrt[n]{a})^(n-1))$. Hence for each $m \in \mathbb{N}$, $(\sqrt[n]{a}-d)^m$ can be written as $a_0 + a_1*\sqrt[n]{a} + a_2*(\sqrt[n]{a})^2 + \dots + a_n-1*(\sqrt[n]{a})^(n-1)$ which is the value taken by the polynomial $P_m(X) = a_0 + a_1X + \dots + a_n-1X^(n-1)$ at $\sqrt[n]{a}$, since $(\sqrt[n]{a}-d)^m$ converges to 0 as goes to infinity, we see that $\sqrt[n]{a}$ is getting closer and closer to one of the real roots of $P_m$ if such roots exist. Since the degree of $P_m$ is at most $n-1$, it ensues that for $n \leq 5$ finding the roots of $P_m$ is done by solving an algebraic equation of degree less than or equal to 4, which we know can be done in radicals. Thus finding the roots of $P_m$ yields an approximation of $\sqrt[n]{a}$ by an expression containing radicals of order at most n-1, by repeating this whole process for the (possibly) nested radicals one derives a fraction approximating $\sqrt[n]{a}$. Two points can be noted:
+The method described for the approximation of $\sqrt[3]{2}$ in the previous section can be generalized as follows. Let a be a positive integer such that there exists no integer b such that $b^{n} = a$, we wish to approximate $\sqrt[n]{a}$. Suppose we have computed the integer n-th root of a, i.e. $\lfloor \sqrt[n]{a} \rfloor$, we call it d. The minimal polynomial of $\sqrt[n]{a}$ over $\mathbb{Q}$ is $X^{n} - a$, hence the algebraic extension $\mathbb{Q}(\sqrt[n]{a})$ of $\mathbb{Q}$ is of degree n, it is a $\mathbb{Q}$-vector space of dimension n, of which a basis is $(1, \sqrt[n]{a}, (\sqrt[n]{a})^{2}, \dots, (\sqrt[n]{a})^{n-1})$. Hence for each $m \in \mathbb{N}$, $(\sqrt[n]{a}-d)^m$ can be written as $a_0 + a_1\cdot\sqrt[n]{a} + a_2\cdot(\sqrt[n]{a})^2 + \dots + a_{n-1}\cdot(\sqrt[n]{a})^(n-1)$ which is the value taken by the polynomial $P_m(X) = a_0 + a_1X + \dots + a_{n-1}X^{n-1}$ at $\sqrt[n]{a}$, since $(\sqrt[n]{a}-d)^m$ converges to 0 as goes to infinity, we see that $\sqrt[n]{a}$ is getting closer and closer to one of the real roots of $P_m$ if such roots exist. Since the degree of $P_m$ is at most $n-1$, it ensues that for $n \leq 5$ finding the roots of $P_m$ is done by solving an algebraic equation of degree less than or equal to 4, which we know can be done in radicals. Thus finding the roots of $P_m$ yields an approximation of $\sqrt[n]{a}$ by an expression containing radicals of order at most n-1, by repeating this whole process for the (possibly) nested radicals one derives a fraction approximating $\sqrt[n]{a}$. Several points can be noted:
  * computing the polynomial $P_m$ is equivalent to reducing $(X - d)^m$ in $\mathbb{Q}[X]/(X^{n}-a)$
- * the whole process can be done with d = $\lceil \sqrt[n]{a} \rceil$ since we only need $\lvert\sqrt[n]{a}-d\rvert \lt 1$. Actually $a$ does not need to be an integer and $d$ does not have to be either $\lfloor \sqrt[n]{a} \rfloor$ or $\lceil \sqrt[n]{a} \rceil$, in fact d can be any rational number d such that $\lvert\sqrt[n]{a}-d\rvert \lt 1$.
+ * the whole process can be done with d = $\lceil \sqrt[n]{a} \rceil$ since we only need $\lvert\sqrt[n]{a}-d\rvert \lt 1$. Actually $a$ does not need to be an integer, it can be any rational, also $d$ does not have to be either $\lfloor \sqrt[n]{a} \rfloor$ or $\lceil \sqrt[n]{a} \rceil$, in fact d can be any rational number d such that $\lvert\sqrt[n]{a}-d\rvert \lt 1$.
+ * Regarding the polynomials since we are actually working in $\mathbb{Q}[X]/(X^{n}-a)$, $P_m$ will not produce a useful approximation until m >= n.
 
 ### Additional examples
 
+Let us treat the case of $\sqrt[5]{2}$, here obviously $d = 1$, the polynomial is $(X-1)^{5}\ mod\ (X^{5}-2) = -5\cdot X^{4} + 10\cdot X^{3} - 10\cdot X^{2} + 5\cdot X + 1$, it has two non-complex roots: 
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\frac{1}{10}(5\pm\sqrt{5(6\sqrt{5}-5)})"/></p>
 
-.
+The positive root yields
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{1}{10}(5+\sqrt{5(6\sqrt{5}-5)})"/></p>
+
+with a precision of 8.35319e-6.
 
 
-This work is licensed under CC BY 4.0.
+
+Authored by Youcef Lemsafer. This work is licensed under CC BY 4.0.
  
