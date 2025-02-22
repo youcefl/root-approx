@@ -73,9 +73,9 @@ where each approximation is followed by its precision between parenthesis. Below
 ## Approximation of n-th roots ($2 \leq n \leq 5$)
 
 ### General principle
-The method described for the approximation of $\sqrt[3]{2}$ in the previous section can be generalized as follows. Let a be a positive integer such that there exists no integer b such that $b^{n} = a$, we wish to approximate $\sqrt[n]{a}$. Suppose we have computed the integer n-th root of a, i.e. $\lfloor \sqrt[n]{a} \rfloor$, we call it d. The minimal polynomial of $\sqrt[n]{a}$ over $\mathbb{Q}$ is $X^{n} - a$, hence the algebraic extension $\mathbb{Q}(\sqrt[n]{a})$ of $\mathbb{Q}$ is of degree n, it is a $\mathbb{Q}$-vector space of dimension n, of which a basis is $(1, \sqrt[n]{a}, (\sqrt[n]{a})^{2}, \dots, (\sqrt[n]{a})^{n-1})$. Hence for each $m \in \mathbb{N}$, $(\sqrt[n]{a}-d)^m$ can be written as $a_0 + a_1\cdot\sqrt[n]{a} + a_2\cdot(\sqrt[n]{a})^2 + \dots + a_{n-1}\cdot(\sqrt[n]{a})^(n-1)$ which is the value taken by the polynomial $P_m(X) = a_0 + a_1X + \dots + a_{n-1}X^{n-1}$ at $\sqrt[n]{a}$, since $(\sqrt[n]{a}-d)^m$ converges to 0 as goes to infinity, we see that $\sqrt[n]{a}$ is getting closer and closer to one of the real roots of $P_m$ if such roots exist. Since the degree of $P_m$ is at most $n-1$, it ensues that for $n \leq 5$ finding the roots of $P_m$ is done by solving an algebraic equation of degree less than or equal to 4, which we know can be done in radicals. Thus finding the roots of $P_m$ yields an approximation of $\sqrt[n]{a}$ by an expression containing radicals of order at most n-1, by repeating this whole process for the (possibly) nested radicals one derives a fraction approximating $\sqrt[n]{a}$. Several points can be noted:
+The method described for the approximation of $\sqrt[3]{2}$ in the previous section can be generalized as follows. Let a be a positive integer such that there exists no integer b such that $b^{n} = a$, we wish to approximate $\sqrt[n]{a}$. Suppose we have computed the integer n-th root of a, i.e. $\lfloor \sqrt[n]{a} \rfloor$, we call it d. The minimal polynomial of $\sqrt[n]{a}$ over $\mathbb{Q}$ is $X^{n} - a$, hence the algebraic extension $\mathbb{Q}(\sqrt[n]{a})$ of $\mathbb{Q}$ is of degree n, it is a $\mathbb{Q}$-vector space of dimension n, of which a basis is $(1, \sqrt[n]{a}, (\sqrt[n]{a})^{2}, \dots, (\sqrt[n]{a})^{n-1})$. Hence for each $m \in \mathbb{N}$, $(\sqrt[n]{a}-d)^m$ can be written as $a_0 + a_1\cdot\sqrt[n]{a} + a_2\cdot(\sqrt[n]{a})^2 + \dots + a_{n-1}\cdot(\sqrt[n]{a})^{n-1}$ which is the value taken by the polynomial $P_m(X) = a_0 + a_1X + \dots + a_{n-1}X^{n-1}$ at $\sqrt[n]{a}$, since $(\sqrt[n]{a}-d)^m$ converges to $0$ as $m$ goes to infinity, we see that $\sqrt[n]{a}$ is getting closer and closer to one of the real roots of $P_m$ if such roots exist. Since the degree of $P_m$ is at most $n-1$, it ensues that for $n \leq 5$ finding the roots of $P_m$ is done by solving an algebraic equation of degree less than or equal to 4, which we know can be done in radicals. Thus finding the roots of $P_m$ yields an approximation of $\sqrt[n]{a}$ by an expression containing radicals of order at most n-1, by repeating this whole process for the (possibly) nested radicals one derives a fraction approximating $\sqrt[n]{a}$. Several points can be noted:
  * computing the polynomial $P_m$ is equivalent to reducing $(X - d)^m$ in $\mathbb{Q}[X]/(X^{n}-a)$
- * the whole process can be done with d = $\lceil \sqrt[n]{a} \rceil$ since we only need $\lvert\sqrt[n]{a}-d\rvert \lt 1$. Actually $a$ does not need to be an integer, it can be any rational, also $d$ does not have to be either $\lfloor \sqrt[n]{a} \rfloor$ or $\lceil \sqrt[n]{a} \rceil$, in fact d can be any rational number d such that $\lvert\sqrt[n]{a}-d\rvert \lt 1$.
+ * the whole process can be done with d = $\lceil \sqrt[n]{a} \rceil$ since we only need $\lvert\sqrt[n]{a}-d\rvert \lt 1$. Actually $a$ does not need to be an integer, it can be any rational, also $d$ does not have to be either $\lfloor \sqrt[n]{a} \rfloor$ or $\lceil \sqrt[n]{a} \rceil$, in fact $d$ can be any rational number $q$ such that $\lvert\sqrt[n]{a}-q\rvert \lt 1$.
  * Regarding the polynomials since we are actually working in $\mathbb{Q}[X]/(X^{n}-a)$, $P_m$ will not produce a useful approximation until m >= n.
 
 ### Additional examples
@@ -84,11 +84,99 @@ Let us treat the case of $\sqrt[5]{2}$, here obviously $d = 1$, the polynomial i
 <p align="center"><img src="https://latex.codecogs.com/svg.image?\frac{1}{10}(5\pm\sqrt{5(6\sqrt{5}-5)})"/></p>
 
 The positive root yields
-<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{1}{10}(5+\sqrt{5(6\sqrt{5}-5)})"/></p>
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{1}{10}(5+\sqrt{5(6\sqrt{5}-5)})\qquad(1)"/></p>
 
-with a precision of 8.35319e-6.
+with a precision of 8.35319e-6. If we replace $\sqrt{5}$ by its integer part we get
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{1}{10}(5+\sqrt{35})\quad\textit{(5.70904e-2)}"/></p>
+
+If we replace $\sqrt{35}$ by its approximations 6 and $\frac{65}{11}$ we get
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{11}{10}\quad\textit{(4.86984e-2)}"/></p>
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{12}{11}\quad\textit{(5.77893e-2)}"/></p>
+
+If we proceed with a more precise approximation of $\sqrt{5}$ such as $9/4$ we get
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\frac{1}{10}(5+\sqrt{5(6\sqrt{5}-5)})\approx\frac{1}{10}(5+\sqrt{5(\frac{6\cdot9}{4}-5)})=\frac{1}{10}(5+\sqrt{\frac{85}{2}})"/></p>
+
+To get an approximation of $\sqrt{85/2}$, it is enough to compute $(\sqrt{85/2} - 6)^{2} = (157-24\sqrt{85/2})/2$ which gives us $\sqrt{85/2}\approx157/24\quad\textit{(2.24643e-2)}$ from which we derive
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[5]{2}\approx\frac{1}{10}(5+\frac{157}{24})=\frac{277}{240}\quad\textit{(5.46831e-3)}"/></p>
+
+If we repeat this process with approximations of $\sqrt{5}$ that are more and more precise we can get closer and closer to the precision of (1).
+The appendices contains a table which reproduces these results and extends them.
+
+## Appendices
+
+### Approximation of $\sqrt{5}$
+
+| Exponent of $\sqrt(5)-2$  |  Approximant  |  Precision
+|---------------|--------------------------------|-----------------------
+|  1            |  2                             |  2.36068e-1
+|  2            |  9/4                           |  1.39320e-2
+|  3            |  38/17                         |  7.73860e-4
+|  4            |  161/72                        |  4.31336e-5
+|  5            |  682/305                       |  2.40373e-6
+|  6            |  2889/1292                     |  1.33955e-7
+|  7            |  12238/5473                    |  7.46507e-9
+|  8            |  51841/23184                   |  4.16014e-10
+|  9            |  219602/98209                  |  2.31837e-11
+|  10           |  930249/416020                 |  1.29198e-12
+
+### Approximation of $\sqrt[3]{3}$
+
+|  n   |  Polynomial      | Approximations                                    | Precision
+|------|------------------|---------------------------------------------------|-------------------------------------------
+|  1   |  $X - 1$         | 1                                                 | 4.42250e-1
+|  3   |  $-3X^2+3X+2$    | $(1 + \sqrt{11/3})/2$                             | 1.51775e-2
+|      |                  | $3/2$ ($\sqrt{11/3} \approx 2$)                   | 5.77504e-2
+|      |                  | $4/3$ ($\sqrt{11/3} \approx 5/3$)                 | 1.08916e-1
+|      |                  | $22/15$ ($\sqrt{11/3} \approx 29/15$)             | 2.44171e-2
+|      |                  | $118/81$ ($\sqrt{11/3} \approx 115/81$)           | 1.45406e-2
+|      |                  | $634/435$ ($\sqrt{11/3} \approx 833/435$)         | 1.52217e-2
+|  4   | $6X^{2}-X-11$    | $(1 + \sqrt{265})/12$                             | 2.34785e-3
+|      |                  | $17/12$ ($\sqrt{265} \approx 16$)                 | 2.55829e-2
+|      |                  | $553/384$ ($\sqrt{265} \approx 521/32$)           | 2.14540e-3
+|      |                  | $17849/12396$ ($\sqrt{265} \approx 16816/1033$)   | 2.34960e-3
+| 5    | $-7X^{2}-10X+29$ | $(2\sqrt{57} - 5)/7$                              | 5.60268e-4
+|      |                  | $9/7$ ($\sqrt{57} \approx 7$)                     | 1.56535e-1
+|      |                  | $71/49$ ($\sqrt{57} \approx 53/7$)                | 6.73002e-3
+|      |                  | $515/357$ ($\sqrt{57} \approx 385/51$)            | 3.27461e-4
+|      |                  | $3747/2597$ ($\sqrt{57} \approx 2801/371$)        | 5.69067e-4
+| 6    | $-3X^{2}+39X-50$ | $(13 - \sqrt{307/3})/2$                           | 2.46539e-4
+|      |                  | $3/2$ (\sqrt{307/3} \approx 10$)                  | 5.77504e-2
+|      |                  | $173/120$ ($\sqrt{307/3} \approx 607/60$)         | 5.82904e-4
+|      |                  | $3481/2414$ ($\sqrt{307/3} \approx 12210/1207$)   | 2.44599e-4
+|      |                  | $210071/145680$ ($\sqrt{307/3} \approx 736849/72840$) | 2.46550e-4
+| 7    | $42X^{2}-89X+41$ | $(89 + \sqrt{1033})/84$                           | 1.02935e-4
+|      |                  | $121/84$ (\sqrt{1033} \approx 32)                 | 1.77338e-3
+|      |                  | $7753/5376$ (\sqrt{1033} \approx 2057/64)         | 9.92727e-5
+|      |                  | $497281/344820$ (\sqrt{1033} \approx 131936/4105) | 1.02943e-4
+| 8    | $-131X^{2}+130X+85$ | $(65 + 32\sqrt{15})/131$                          | 5.90358e-6 
+|      |                  | $193/131$ (\sqrt{15} \approx 4)                   | 3.10329e-2
+|      |                  | $1319/917$ (\sqrt{15} \approx 27/7)               | 3.86353e-3
+|      |                  | $189/131$ (\sqrt{15} \approx 31/8)                | 4.98521e-4
+|      |                  | $10391/7205$ (\sqrt{15} \approx 213/55)           | 5.66487e-5
+|      |                  | $5857/4061$ ($\sqrt{15} \approx 1921/496$)        | 6.03176e-6
+|      |                  | $644081/446579$ ($\sqrt{15} \approx 13203/3409$)  | 5.88729e-6
+|      |                  | $737793/511555$ ($\sqrt{15} \approx 15124/3905$)  | 5.90564e-6
+| 9    | $261X^{2}-45X-478$   | $5/58 + \sqrt{55673}/174$                         | 9.14246e-7
+|      |                  | $251/174$ ($236$)                                 | 2.79165e-4
+|      |                  | $9829/6815$ ($55449/235$)                         | 1.01509e-5
+|      |                  | $6943445/4814319$ ($13056835/55337$)              | 9.36596e-7
+|      |                  | $1635012119/1133654805$ ($3074566513/13030515$)   | 9.14201e-7
+|      |                  | $385005513805/266948082903$ ($723985496075/3068368769$)   | 9.14246e-7
+| 10   | $-306X^{2}-433X$ | $(\sqrt{1730953} - 433)/612$                      | 2.17536e-7
+|      |                  | $49/34$ ($1315$)                                  | 1.07310e-3
+|      |                  | $883/612$ ($1316$)                                | 5.60887e-4
+|      |                  | $64483/44710$ ($1730089/1315$)                    | 4.85608e-7
+|      |                  | $331879/230112$ ($494687/376$)                    | 2.90630e-7
+|      |                  | $84816313/58808338$ ($2275635115/1729657$)        | 2.17469e-7
+|      |                  | $873391621/605575836$ ($1301846420/989503$)       | 2.17546e-7
+|      |                  | $111561308251/77352279190$ ($2993207574673/2275067035$)        | 2.17536e-7
+|      |                  | $328352437105/227666829888$ ($489430439297/372004624$)       | 2.17536e-7
+|      |                  | $146739760997281/101743652336866$ ($3937051035064675/2992460362849$) | 2.17536e-7
+|      |                  | $864110946941251/599140976982372$ ($1288012978041524/978988524481$)  | 2.17536e-7
 
 
+--------------------------------------------------------------------------------------------------------------------
+Authored by Youcef Lemsafer. Creation date: 2025.02.20.
 
-Authored by Youcef Lemsafer. This work is licensed under CC BY 4.0.
+This work is licensed under CC BY 4.0.
  
