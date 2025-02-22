@@ -38,15 +38,27 @@ Note that the sequence of numerators for the approximation of $\sqrt{3}$ is [A00
 
 ## Approximation of $\sqrt[3]{2}$
 
-If we try to apply the same method for approximating $\sqrt[3]{2} = 2^{\frac{1}{3}}$, we have $(\sqrt[3]{2}-1)^{2} = 1+2^{2/3}-2\cdot2^{1/3}$ from which we can not derive an approximation as we did in the case of square roots because in addition to $2^{1/3}$ there is the term $2^{2/3}$. However if we look at the expression $1+2^{2/3}-2\cdot2^{1/3}$ as being the evaluation at $X=2^{1/3}$ of the polynomial $P(X) = X^{2}-2X+1$, then if $P$ has real roots one of them has to be close to $2^{1/3}$. In this case P has $1$ as unique real root (with multiplicity 2), so the approximation we get is $2^{1/3} \approx 1$, which is not really interesting. Let us see what we get if we move to exponent 3: $(2^{1/3}-1)^{3} = (1+2^{2/3}-2\cdot2^{1/3})(2^{1/3}-1) = 1 + 3\cdot2^{1/3} - 3\cdot2^{2/3}$ which is the value of $P(X) = -3X^{2}+3X+1$ when $X=\sqrt[3]{2}$, now $P$ has the roots $(3 \pm \sqrt{21})/6$, we get the approximant $(3 + \sqrt{21})/6$, with precision $3.84E-3$. This approximant of $\sqrt[3]{2}$ contains a square root on which we can apply the method described in the previous section: we have $(\sqrt{21}-5)^{2} = 46-10\sqrt{21}$ hence $\sqrt{21} \approx 23/5$ from which we deduce the approximant $(3+23/5)/6 = 19/15$ of $\sqrt[3]{2}$ which has precision $6.7456E-3$.
-With exponent 4: $(2^{1/3}-1)^{4} = (1 + 3\cdot2^{1/3} - 3\cdot2^{2/3})(2^{1/3}-1) = -7 - 2\cdot2^{1/3} + 6\cdot2^{2/3}$, the polynomial is now $P(X) = 6X^{2}-2X-7$, the roots of P are $1/6 \pm \sqrt{43}/6$. The positive root yields  
-$$2^{\frac{1}{3}} \approx \frac{1 + \sqrt{43}}{6}$$ (precision: $3.47963e-4$)  
-By approximating $\sqrt{43}$ we get   
-\[
-$\sqrt[3]{2} \approx 91/72$ (precision: 3.96784e-3)
-\]
-$\sqrt[3]{2} \approx 1141/906$ (precision: 5.39151e-4)  
-$\sqrt[3]{2} \approx 14329/11376$ (precision: 3.39475e-4)  
+If we try to apply the same method for approximating $\sqrt[3]{2} = 2^{\frac{1}{3}}$, we get $(\sqrt[3]{2}-1)^{2} = 1+2^{2/3}-2\cdot2^{1/3}$ from which we can not derive an approximation as we did in the case of square roots because in addition to $2^{1/3}$ there is the term $2^{2/3}$. However if we look at the expression $1+2^{2/3}-2\cdot2^{1/3}$ as being the evaluation at $X=2^{1/3}$ of the polynomial $P(X) = X^{2}-2X+1$, then if $P$ has real roots one of them has to be close to $2^{1/3}$. In this case P has $1$ as unique real root (with multiplicity 2), so the approximation we get is $2^{1/3} \approx 1$, which is not really interesting. Let us see what we get if we move to exponent 3: $(2^{1/3}-1)^{3} = (1+2^{2/3}-2\cdot2^{1/3})(2^{1/3}-1) = 1 + 3\cdot2^{1/3} - 3\cdot2^{2/3}$ which is the value of $P(X) = -3X^{2}+3X+1$ at $X=\sqrt[3]{2}$, now $P$ has the roots $(3 \pm \sqrt{21})/6$, which produces the approximation
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[3]{2}%20\approx%20\frac{3%20+%20\sqrt{21}}{6}"/></p>
+
+with precision $3.84e-3$. This approximant of $\sqrt[3]{2}$ contains a square root on which we can apply the method described in the previous section: we have $(\sqrt{21}-5)^{2} = 46-10\sqrt{21}$ hence $\sqrt{21} \approx 23/5$ from which we deduce the approximation
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[3]{2}%20\approx%20\frac{19}{15}"/></p>
+
+with precision $6.7456e-3$.<br>
+With exponent 4: $(2^{1/3}-1)^{4} = (1 + 3\cdot2^{1/3} - 3\cdot2^{2/3})(2^{1/3}-1) = -7 - 2\cdot2^{1/3} + 6\cdot2^{2/3}$, the polynomial is now $P(X) = 6X^{2}-2X-7$, the roots of P are $(1 \pm \sqrt{43})/6$. The positive root yields
+<p align="center"><img src="https://latex.codecogs.com/svg.image?2^{\frac{1}{3}}%20\approx%20\frac{1%20+%20\sqrt{43}}{6}"/></p>
+
+the precision being $3.47963e-4$. By approximating $\sqrt{43}$ we get
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[3]{2}%20\approx%2091/72\quad(3.96784e-3)"/></p>
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[3]{2}%20\approx%201141/906\quad(5.39151e-4)"/></p>
+<p align="center"><img src="https://latex.codecogs.com/svg.image?\sqrt[3]{2}%20\approx%2014329/11376\quad(3.39475e-4)"/></p>
+
+where each approximation is followed by its precision between parenthesis. Below is a table giving the approximations that can be obtained with next few exponents
+
+
+$X = 2^{5/7}$
+
+
 
 
 This work is licensed under CC BY 4.0.
