@@ -333,5 +333,6 @@ Between parenthesis are the approximations used for the square root appearing in
 --------------------------------------------------------------------------------------------------------------------
 Authored by Youcef Lemsafer. Creation date: 2025.02.20.
 
-This work is licensed under CC BY 4.0.
+This file is licensed under CC BY 4.0.
+The script is licensed under the MIT license.
  
