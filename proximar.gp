@@ -1,6 +1,7 @@
 /*
  * Author: Youcef Lemsafer
  * Creation date: 2025.02.23
+ * Licensed under MIT license. See file LICENSE-MIT.
  */
 
 
